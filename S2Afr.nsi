@@ -1,6 +1,6 @@
-;NSIS Modern User Interface
-;Basic Example Script
-;Written by Joost Verburg
+;NSIS Installer for s2a
+;
+;Ecrit par Alexandre Gauvrit
 
 ;--------------------------------
 ;Include Modern UI
@@ -12,7 +12,7 @@
 
 	; The name of the installer
 	Name "Scratch2Arduino Francais"
-	VIProductVersion "0.1"
+	VIProductVersion "0.2"
 
 	; The file to write
 	OutFile "Setup_S2Afr.exe"
@@ -48,6 +48,7 @@
   
   !define MUI_FINISHPAGE_RUN
   !define MUI_FINISHPAGE_RUN_NOTCHECKED
+  !define MUI_FINISHPAGE_RUN_TEXT "Installer Adobe AIR + Scratch2 4.3.6"
   !define MUI_FINISHPAGE_RUN_FUNCTION "InstallScratch2";
   
   !insertmacro MUI_PAGE_FINISH
@@ -56,7 +57,8 @@
   !insertmacro MUI_UNPAGE_INSTFILES
   
   Function InstallScratch2
-		ExecWait '"$INSTDIR\Scratch-436.exe" -silent -eulaAccepted -desktopShortcut -programMenu'
+		ExecWait "$INSTDIR\AdobeAIRInstaller.exe"
+		ExecWait "$INSTDIR\Scratch-436.exe"
   FunctionEnd
   
 ;--------------------------------
@@ -92,6 +94,7 @@ Section "Scratch2Arduino" SecDummy
   File /r "sources_Borland_C++"
   File /r "tools"
   File "Scratch-436.exe"
+  File "AdobeAIRInstaller.exe"
   File "connect.bmp"
   File "flash_mega.bat"
   File "flash_uno.bat"
