@@ -1,9 +1,11 @@
 # s2a_fr-nsis
 ###Installeur pour S2A en Francais
 
+Vous trouverez dans ce repo tous les fichiers nécéssaires à la compilation de l'installeur, à l'aide du fichier .nsi
+
 J'ai réalisé ce petit installeur avec l'aide de NSIS.
 
-Voici son comportement :
+Voici les étapes d'installation :
 
 - Acceptation de la licence
 - Choix du répertoire de destination
@@ -13,7 +15,8 @@ Voici son comportement :
 - Inscription dans la base de registre pour la désinstallation
 - Possibilité de lancer l'installation de Adobe Air + Scratch2 Offline (inclus dans le setup)
 
-Vous trouverez dans ce repo tous les fichiers nécéssaires à la compilation de l'installeur, à l'aide du fichier .nsi
+###Installation silencieuse
+En ligne de commande utilisez le paramètre /S , par defaut il installera le logiciel dans C:\Program Files(x86)\s2a_fr\ et ne lancera pas l'installation de Adobe Air et Scratch2.
 
 ###Liens utiles
 - Projet s2a_fr : https://github.com/technologiescollege/s2a_fr
